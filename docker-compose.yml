@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  verificador:
+    build: ./verificador
+    container_name: centinela-verificador
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+  backend:
+    build: ./backend
+    image: centinela/backend:0.1.0
+    ports: ["8000:8000"]
+    depends_on: ["db"]
+    environment:
+      - DATABASE_URL=postgresql://centi:centi@db:5432/centinela
+
+  frontend:
+    build: ./frontend
+    image: centinela/frontend:0.1.0
+    ports: ["8080:80"]
+    depends_on: ["backend"]
+
+  scraper:
+    build: ./scraper
+    image: centinela/scraper:0.1.0
+    depends_on: ["backend"]
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: centi
+      POSTGRES_PASSWORD: centi
+      POSTGRES_DB: centinela
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    ports: ["5432:5432"]
+
+volumes:
+  dbdata:
