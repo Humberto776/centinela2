@@ -153,6 +153,10 @@ description: Snyk Security At Inception
 ---
 
 ## <img width="1083" height="672" alt="image" src="https://github.com/user-attachments/assets/9a101836-1a7f-43e7-8125-76df7cf53804" />
+<img width="1118" height="649" alt="image" src="https://github.com/user-attachments/assets/111bb952-caeb-43ab-b237-c5085142ed19" />
+
+<img width="1360" height="463" alt="image" src="https://github.com/user-attachments/assets/633e9dae-130e-4189-a397-1490f8802ff5" />
+
 
 
 ---
