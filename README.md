@@ -98,51 +98,53 @@ curl http://localhost:8000/docs
 curl http://localhost:8000
 
 
----
-## Fases
-```bash
-🔹 Fase 1: Plan
-        🔹Modelado de amenazas: OWASP Threat Dragon, STRIDE
 
-🔹 Fase 2: Code (Seguridad Estática)
 
-        🔹 Pre-commit Hooks:
-        🔹gitleaks` → Detecta secretos y claves API
-       🔹black` → Formato Python consistente
-       🔹fix-end-of-files` / `trailing-whitespace` → Limpieza de código
+## 📌 Pipeline DevSecOps
+**Archivo principal:** `.github/workflows/ci-cd.yml`  
+Integra seguridad en cada fase del ciclo de vida del software.
 
-    🔹SAST (Análisis Estático):
+docs/arquitectura.png  
+docs/pipeline.png  
+![Reporte ZAP](docs/vulnerabilidad.png) <!-- Usa la imagen que subiste Fases del Pipeline
 
-        🔹flake8` → Errores y estilo
-        🔹bandit` → Vulnerabilidades comunes en Python
-        🔹semgrep` → Patrones de código complejos
-        🔹SCA (Dependencias):`trivy fs` → Detecta CVEs
-        🔹IaC Scan:** `checkov` → Escaneo de Terraform
+### 🔹 Fase 1: **Plan**
+- **Modelado de amenazas:** OWASP Threat Dragon, STRIDE
 
-🔹 Fase 3: Build (Seguridad de Imágenes)
+### 🔹 Fase 2: **Code (Seguridad Estática)**
+- **Pre-commit Hooks:**
+  - `gitleaks` → Detecta secretos y claves API
+  - `black` → Formato Python consistente
+  - `fix-end-of-files` / `trailing-whitespace` → Limpieza de código
+- **SAST (Análisis Estático):**
+  - `flake8` → Errores y estilo
+  - `bandit` → Vulnerabilidades comunes en Python
+  - `semgrep` → Patrones de código complejos
+- **SCA (Dependencias):** `trivy fs` → Detecta CVEs
+- **IaC Scan:** `checkov` → Escaneo de Terraform
 
-    🔹Escaneo:** `trivy image` detecta HIGH/CRITICAL y bloquea el pipelineConstrucción:** Docker de los 3 microservicios
-    🔹Escaneo:** `trivy image` detecta HIGH/CRITICAL y bloquea el pipeline
-    🔹Registro Temporal:** GHCR (GitHub Container Registry) con la `run_id`
+### 🔹 Fase 3: **Build (Seguridad de Imágenes)**
+- **Construcción:** Docker de los microservicios
+- **Escaneo:** `trivy image` detecta HIGH/CRITICAL y bloquea el pipeline
+- **Registro Temporal:** GHCR (GitHub Container Registry) con la `run_id`
 
-🔹 Fase 4: Test (Seguridad Dinámica)
+### 🔹 Fase 4: **Test (Seguridad Dinámica)**
+- **Unit & Smoke Tests:** `pytest` para API y frontend
+- **DAST:** OWASP ZAP analiza frontend (`http://frontend:80`)
+- **Quality Gates:** Falla el pipeline si:
+  - `pytest` falla
+  - `trivy` detecta CVEs críticos
+  - ZAP detecta vulnerabilidades críticas
 
-  🔹Unit & Smoke Tests: `pytest` para API y frontend
-  🔹DAST:** OWASP ZAP analiza frontend (`http://frontend:80`)
-  🔹Quality Gates:Falla el pipeline si:
-     🔹pytest` falla
-      🔹trivy` detecta CVEs críticos
-      🔹ZAP detecta vulnerabilidades críticas
+### 🔹 Fase 5 y 6: **Release, Deploy y Monitor**
+- **Publicación:** Imágenes validadas en:
+  - GitHub Container Registry (GHCR) con tag `:latest`
+  - Docker Hub con tag `:latest`
+- **Deploy (Simulado):** Job `deploy-to-production` simula conexión SSH a VPS y actualización con:
+  ```bash
+  docker compose pull
+  docker compose up -d
 
-🔹 Fase 5 y 6: Release, Deploy & Monitor
-
-  🔹Publicación: Las imágenes validadas se publican en:
-  🔹 GitHub Container Registry (GHCR) con tag `:latest`
-  🔹 Docker Hub con tag `:latest`
-  🔹Deploy (Simulado): Job `deploy-to-production` simula la conexión SSH a un VPS y la actualización con `docker compose pull` y `docker compose up -d`.
-  🔹Monitoreo:** Opcional, Falco (seguridad runtime) + stack PLG (Promtail, Loki, Grafana) para logs.
-
----
 
 
 
