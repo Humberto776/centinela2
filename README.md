@@ -1,4 +1,5 @@
 ---
+# Scan vulneravilidades
 alwaysApply: true
 always_on: true
 trigger: always_on
