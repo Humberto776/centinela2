@@ -164,6 +164,7 @@ curl http://localhost:8000/docs
 curl http://localhost:8000
 
 
+<img width="1081" height="592" alt="image" src="https://github.com/user-attachments/assets/887b5922-0b81-47d5-965e-0732ffc79687" />
 
 
 
