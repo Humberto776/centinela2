@@ -87,19 +87,6 @@ docs/pipeline.png
 - **Operate/Monitor:** Grafana, Loki, Promtail, Falco.
 
 Workflow: `.github/workflows/devsecops.yml`.
-
----
-
-## ▶️ Ejecución local
-```bash
-docker compose up -d --build
-curl http://localhost:8000/health
-curl http://localhost:8000/docs
-curl http://localhost:8000
-
-
-
-
 ## 📌 Pipeline DevSecOps
 **Archivo principal:** `.github/workflows/ci-cd.yml`  
 Integra seguridad en cada fase del ciclo de vida del software.
@@ -144,6 +131,19 @@ docs/pipeline.png
   ```bash
   docker compose pull
   docker compose up -d
+
+
+---
+
+## ▶️ Ejecución local
+```bash
+docker compose up -d --build
+curl http://localhost:8000/health
+curl http://localhost:8000/docs
+curl http://localhost:8000
+
+
+
 
 
 
