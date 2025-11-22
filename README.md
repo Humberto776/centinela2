@@ -97,3 +97,21 @@ curl http://localhost:8000/health
 curl http://localhost:8000/docs
 curl http://localhost:8000
 ----
+
+### ✅ Reporte DevSecOps (auto)
+Se ejecutaron los escaneos de seguridad:
+
+- **SAST**: Bandit + Semgrep (p/default).
+- **Secrets**: Gitleaks.
+- **Containers/Deps**: Trivy FS + Trivy Image (SARIF en *Security*).
+- **IaC**: Checkov + tfsec (SARIF en *Security*).
+- **DAST**: OWASP ZAP Baseline contra `http://localhost:8000`.
+
+**Artifacts descargables:**
+- ZAP: *zap-baseline-report* (HTML).
+- Gitleaks: *gitleaks-report* (JSON).
+
+**Panel Security (Code scanning alerts):**
+- Ver hallazgos de Trivy/Checkov/tfsec subidos como SARIF.
+
+> Siguientes pasos: triage de hallazgos críticos, rotación de secretos expuestos y actualización de imágenes base. (Opcional: firma de imágenes con Cosign).
