@@ -94,36 +94,5 @@ Workflow: `.github/workflows/devsecops.yml`.
 ```bash
 docker compose up -d --build
 curl http://localhost:8000/health
-
-docs/arquitectura.png
-
-**Componentes:**
-- **Frontend:** SPA en Vue.js o React.
-- **Gateway:** API principal (FastAPI).
-- **Scraper:** Worker para extracción de contenido.
-- **Analyzer:** Microservicio NLP (NLTK).
-- **Publisher:** Publicación en APIs sociales.
-- **Base de Datos:** PostgreSQL.
-- **Broker:** RabbitMQ para comunicación asíncrona.
-
----
-
-## 🔐 Pipeline DevSecOps
-![Pipeline](docs/pipeline.pngherramientas:**
-- **Planificación:** OWASP Threat Dragon (modelado de amenazas).
-- **Code:** Semgrep, Bandit, Gitleaks.
-- **Build:** Docker + Trivy.
-- **Test:** Pytest + OWASP ZAP (DAST).
-- **Release/Deploy:** Terraform + Checkov/tfsec + k3s.
-- **Operate/Monitor:** Grafana, Loki, Promtail, Falco.
-
-Workflow: `.github/workflows/devsecops.yml`.
-
----
-
-## ▶️ Ejecución local
-```bash
-docker compose up -d --build
-curl http://localhost:8000/health
 curl http://localhost:8000/docs
 curl http://localhost:8000
