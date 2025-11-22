@@ -87,7 +87,7 @@ docs/pipeline.png
 - **Operate/Monitor:** Grafana, Loki, Promtail, Falco.
 
 Workflow: `.github/workflows/devsecops.yml`.
-## 📌 Pipeline DevSecOps
+
 **Archivo principal:** `.github/workflows/ci-cd.yml`  
 Integra seguridad en cada fase del ciclo de vida del software.
 
