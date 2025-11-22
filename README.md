@@ -2,9 +2,6 @@
 # PROYECTO CENTINELA
 # Autor: Hummberto Ramirez Pinzon
 
-#API: http://localhost:8000/docs#/default/verificar_verificar_get
-
-
 
 
 ## 📌 Introducción
@@ -160,6 +157,7 @@ description: Snyk Security At Inception
 
 ## ▶️ Ejecución local
 ```bash
+API comsumida: http://localhost:8000/docs#/default/verificar_verificar_get
 docker compose up -d --build
 curl http://localhost:8000/health
 curl http://localhost:8000/docs
