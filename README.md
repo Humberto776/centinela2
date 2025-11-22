@@ -152,6 +152,8 @@ description: Snyk Security At Inception
 
 ---
 
+## <img width="1083" height="672" alt="image" src="https://github.com/user-attachments/assets/9a101836-1a7f-43e7-8125-76df7cf53804" />
+
 
 ---
 
@@ -164,7 +166,7 @@ curl http://localhost:8000/docs
 curl http://localhost:8000
 
 
-<img width="1081" height="592" alt="image" src="https://github.com/user-attachments/assets/887b5922-0b81-47d5-965e-0732ffc79687" />
+
 
 
 
