@@ -90,6 +90,14 @@ Workflow: `.github/workflows/devsecops.yml`.
 
 ---
 
+## ▶️ Ejecución local
+```bash
+docker compose up -d --build
+curl http://localhost:8000/health
+curl http://localhost:8000/docs
+curl http://localhost:8000
+----
+
 name: DevSecOps CI/CD/CS
 
 on:
@@ -162,11 +170,3 @@ jobs:
           # La acción de Gitleaks genera logs/outputs en el job.
           # Si quieres report JSON local, puedes añadir:
           gitleaks detect --source . --report-format json --report-path gitleaks_report.json || true
-
-
-## ▶️ Ejecución local
-```bash
-docker compose up -d --build
-curl http://localhost:8000/health
-curl http://localhost:8000/docs
-curl http://localhost:8000
