@@ -1,15 +1,17 @@
-Introducción
 
-
-Este documento describe la implementación del Proyecto Centinela con enfoque DevSecOps, integrando seguridad en cada fase del ciclo de vida mediante herramientas FOSS y despliegue contenerizado
 # PROYECTO CENTINELA
 # Autor: Hummberto Ramirez Pinzon
+
+#API: http://localhost:8000/docs#/default/verificar_verificar_get
 
 
 
 
 ## 📌 Introducción
+
+Este documento describe la implementación del Proyecto Centinela con enfoque DevSecOps, integrando seguridad en cada fase del ciclo de vida mediante herramientas FOSS y despliegue contenerizado.
 En el panorama digital actual, la desinformación y la manipulación en redes sociales representan amenazas significativas. Este proyecto propone la creación de una plataforma funcional llamada **Proyecto Centinela**, diseñada para:
+
 - Combatir noticias falsas mediante web scraping y contrastación de fuentes.
 - Evaluar el impacto de campañas de información/desinformación.
 - Gestionar la publicación de contenido verificado en múltiples plataformas.
