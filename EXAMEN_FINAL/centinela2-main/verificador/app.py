@@ -1,0 +1,89 @@
+from fastapi import FastAPI, Query, HTTPException
+import requests
+from typing import List, Optional
+
+app = FastAPI(title="Centinela Verificador", version="1.0.0")
+
+FACTCHECK_ENDPOINT = "https://factchecktools.googleapis.com/v1alpha1/claims:search"
+
+@app.get("/verificar")
+def verificar(
+    claim: str = Query(..., min_length=8, description="Frase/titular a verificar"),
+    languageCode: Optional[str] = Query("es", description="Idioma (ej: es, en)"),
+    pageSize: Optional[int] = Query(5, ge=1, le=20, description="Resultados a devolver"),
+    offset: Optional[int] = Query(0, ge=0, description="Desplazamiento para paginación")
+):
+    params = {"query": claim, "languageCode": languageCode, "pageSize": pageSize, "offset": offset}
+
+    try:
+        resp = requests.get(FACTCHECK_ENDPOINT, params=params, timeout=10)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        raise HTTPException(status_code=502, detail=f"Error consultando API externa: {str(e)}")
+
+    data = resp.json()
+    claims: List[dict] = data.get("claims", [])
+
+    resultados = []
+    for c in claims:
+        claim_text = c.get("text", "")
+        claim_date = c.get("claimDate", "")
+        reviews = c.get("claimReview", [])
+        for r in reviews:
+            resultados.append({
+                "veredicto": r.get("textualRating", ""),
+                "verificador": r.get("publisher", {}).get("name", ""),
+                "url_verificacion": r.get("url", ""),
+                "resumen": r.get("title", ""),
+                "claim": claim_text,
+                "fecha_claim": claim_date
+            })
+    return {"consulta": claim, "total": len(resultados), "resultados": resultados}
+from fastapi import FastAPI, Query, HTTPException
+import requests
+from typing import List, Optional
+
+app = FastAPI(title="Centinela Verificador", version="1.0.0")
+
+FACTCHECK_ENDPOINT = "https://factchecktools.googleapis.com/v1alpha1/claims:search"
+
+@app.get("/verificar")
+def verificar(
+    claim: str = Query(..., min_length=8, description="Frase/titular a verificar"),
+    languageCode: Optional[str] = Query("es", description="Código de idioma (ej: es, en)"),
+    pageSize: Optional[int] = Query(5, ge=1, le=20, description="Resultados a devolver"),
+    offset: Optional[int] = Query(0, ge=0, description="Desplazamiento para paginación")
+):
+    params = {
+        "query": claim,
+        "languageCode": languageCode,
+        "pageSize": pageSize,
+        "offset": offset
+    }
+
+    try:
+        resp = requests.get(FACTCHECK_ENDPOINT, params=params, timeout=10)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        raise HTTPException(status_code=502, detail=f"Error consultando API externa: {str(e)}")
+
+    data = resp.json()
+    claims: List[dict] = data.get("claims", [])
+
+    resultados = []
+    for c in claims:
+        claim_text = c.get("text", "")
+        claim_date = c.get("claimDate", "")
+        reviews = c.get("claimReview", [])
+
+        for r in reviews:
+            resultados.append({
+                "veredicto": r.get("textualRating", ""),
+                "verificador": r.get("publisher", {}).get("name", ""),
+                "url_verificacion": r.get("url", ""),
+                "resumen": r.get("title", ""),
+                "claim": claim_text,
+                "fecha_claim": claim_date
+            })
+    return {"consulta": claim, "total": len(resultados), "resultados": resultados}
+
