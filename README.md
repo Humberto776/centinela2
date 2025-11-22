@@ -99,13 +99,14 @@ curl http://localhost:8000
 
 
 ---
-
+## Fases
+```bash
 🔹 Fase 1: Plan
-        🔹Modelado de amenazas:** OWASP Threat Dragon, STRIDE
+        🔹Modelado de amenazas: OWASP Threat Dragon, STRIDE
 
 🔹 Fase 2: Code (Seguridad Estática)
 
-        🔹 Pre-commit Hooks:**
+        🔹 Pre-commit Hooks:
         🔹gitleaks` → Detecta secretos y claves API
        🔹black` → Formato Python consistente
        🔹fix-end-of-files` / `trailing-whitespace` → Limpieza de código
@@ -115,7 +116,7 @@ curl http://localhost:8000
         🔹flake8` → Errores y estilo
         🔹bandit` → Vulnerabilidades comunes en Python
         🔹semgrep` → Patrones de código complejos
-        🔹SCA (Dependencias):** `trivy fs` → Detecta CVEs
+        🔹SCA (Dependencias):`trivy fs` → Detecta CVEs
         🔹IaC Scan:** `checkov` → Escaneo de Terraform
 
 🔹 Fase 3: Build (Seguridad de Imágenes)
@@ -126,19 +127,19 @@ curl http://localhost:8000
 
 🔹 Fase 4: Test (Seguridad Dinámica)
 
-  🔹Unit & Smoke Tests:** `pytest` para API y frontend
+  🔹Unit & Smoke Tests: `pytest` para API y frontend
   🔹DAST:** OWASP ZAP analiza frontend (`http://frontend:80`)
-  🔹Quality Gates:** Falla el pipeline si:
+  🔹Quality Gates:Falla el pipeline si:
      🔹pytest` falla
       🔹trivy` detecta CVEs críticos
       🔹ZAP detecta vulnerabilidades críticas
 
-🔹 Fase 5 & 6: Release, Deploy & Monitor}
+🔹 Fase 5 y 6: Release, Deploy & Monitor
 
-  🔹Publicación:** Las imágenes validadas se publican en:
+  🔹Publicación: Las imágenes validadas se publican en:
   🔹 GitHub Container Registry (GHCR) con tag `:latest`
   🔹 Docker Hub con tag `:latest`
-  🔹Deploy (Simulado):** Job `deploy-to-production` simula la conexión SSH a un VPS y la actualización con `docker compose pull` y `docker compose up -d`.
+  🔹Deploy (Simulado): Job `deploy-to-production` simula la conexión SSH a un VPS y la actualización con `docker compose pull` y `docker compose up -d`.
   🔹Monitoreo:** Opcional, Falco (seguridad runtime) + stack PLG (Promtail, Loki, Grafana) para logs.
 
 ---
