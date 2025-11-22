@@ -46,4 +46,5 @@ Workflow: `.github/workflows/devsecops.yml`.
 ## ▶️ Ejecución local
 ```bash
 docker compose up -d --build
-curl http://localhost:8000/health
+curl [http://localhost:8000/docs]
+curl [http://localhost:8000]
