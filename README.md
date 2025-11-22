@@ -47,7 +47,8 @@ El verdadero desafío es **construir, asegurar y automatizar el ciclo de vida co
 ---
 
 ## 🏗 Arquitectura
-![cs/arquitectura.png
+
+docs/arquitectura.png
 
 ### Tabla de Componentes
 | Componente    | Tecnología       | Función                                      |
@@ -62,6 +63,17 @@ El verdadero desafío es **construir, asegurar y automatizar el ciclo de vida co
 | **Broker**    | RabbitMQ       | Comunicación asíncrona entre servicios     |
 
 ---
+
+
+**Componentes:**
+- **Frontend:** SPA en Vue.js o React.
+- **Gateway:** API principal (FastAPI).
+- **Scraper:** Worker para extracción de contenido.
+- **Analyzer:** Microservicio NLP (NLTK).
+- **Publisher:** Publicación en APIs sociales.
+- **Base de Datos:** PostgreSQL.
+- **Broker:** RabbitMQ para comunicación asíncrona.
+
 
 ## 🔐 Pipeline DevSecOps
 docs/pipeline.png
