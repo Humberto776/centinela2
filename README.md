@@ -107,7 +107,7 @@ Integra seguridad en cada fase del ciclo de vida del software.
 
 docs/arquitectura.png  
 docs/pipeline.png  
-![Reporte ZAP](docs/vulnerabilidad.png) <!-- Usa la imagen que subiste Fases del Pipeline
+
 
 ### 🔹 Fase 1: **Plan**
 - **Modelado de amenazas:** OWASP Threat Dragon, STRIDE
