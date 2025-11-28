@@ -1,4 +1,33 @@
-¿Qué hace este código?
+# PROYECTO CENTINELA
+# Autor: Hummberto Ramirez Pinzon
+
+
+
+
+
+## 📌 Introducción
+
+Este documento describe la implementación del Proyecto Centinela con enfoque DevSecOps, integrando seguridad en cada fase del ciclo de vida mediante herramientas FOSS y despliegue contenerizado.
+En el panorama digital actual, la desinformación y la manipulación en redes sociales representan amenazas significativas. Este proyecto propone la creación de una plataforma funcional llamada **Proyecto Centinela**, diseñada para:
+
+- Combatir noticias falsas mediante web scraping y contrastación de fuentes.
+- Evaluar el impacto de campañas de información/desinformación.
+- Gestionar la publicación de contenido verificado en múltiples plataformas.
+
+
+
+---
+
+## ✅ Objetivos
+- Diseñar e implementar un pipeline CI/CD/CS que integre seguridad en cada fase.
+- Desarrollar la aplicación Centinela con scraping, análisis y publicación.
+- Contenerizar todos los componentes (Frontend, Backend, DB, Workers).
+- Integrar herramientas de seguridad en cada etapa (Shift-Left Security).
+- Desplegar en Kubernetes (k3s) con IaC.
+- Establecer monitoreo y seguridad en tiempo real.
+
+---
+## ¿Qué hace este código?
 Implementa un servicio de verificación de información
 ✔ Consulta Google Fact Check Tools
 ✔ Extrae veredictos, verificadores y enlaces
@@ -24,60 +53,47 @@ Clonar y ejecutar el repositorio
 Construcción y ejecución con Docker
 Ejecute los siguientes comandos:
 cd ~/Centinela
-
- 
+## <img width="380" height="94" alt="image" src="https://github.com/user-attachments/assets/664b2614-9719-4e2f-bfc6-3dd46f96668e" />
 
 docker build -t centinela .
 docker run -d -p 8000:8000 centinela
- 
 
-APARECERA UN MENSAJE COMO ESTA  
+## <img width="349" height="64" alt="image" src="https://github.com/user-attachments/assets/83d47e3f-3408-440d-8d3f-386662d08f2b" />
+
+aparecerá un mensaje como esta 
+
+## <img width="921" height="189" alt="image" src="https://github.com/user-attachments/assets/764ae3a7-1778-4f74-8128-fb803c2c1346" />
+
 Después de esto, acceda a la ruta: 
  http://localhost:8000/docs
 Uso de la API
 
 En la interfaz, despliegue el icono como se muestra en la imagen y realice las consultas en el validador.
 Ingrese la consulta a validar en el campo correspondiente y haga clic en 'Ejecutar'. El sistema entregará los resultados.
- 
-para realizar la verificación de be desplegar en el icono como se muestra en la imagen  
+
+## <img width="921" height="314" alt="image" src="https://github.com/user-attachments/assets/28893f61-83b2-44d5-ad69-a47dd9e94b12" />
+
+para realizar la verificación de be desplegar en el icono como se muestra en la imagen 
+
+## <img width="921" height="331" alt="image" src="https://github.com/user-attachments/assets/f862c8bc-ecb5-426c-b64f-65c86bd71e58" />
+
 aparece así 
- 
+## <img width="921" height="486" alt="image" src="https://github.com/user-attachments/assets/18a1fe71-c64b-4465-9630-020ebcf15d0e" />
 
 estando en esta ventana podrán realizar las consultas en el validador 
 activar como se muestra en la imagen 
- 
+
+## <img width="921" height="209" alt="image" src="https://github.com/user-attachments/assets/22e6ebde-e4f2-4573-a9d2-b73a182b7c34" />
 en el campo debe colocar la Consulta a validar 
- 
-dar click en ejecutar  
+## <img width="921" height="247" alt="image" src="https://github.com/user-attachments/assets/48f68f98-468d-4dcd-be5f-ac25ed6c7cf3" />
+dar click en ejecutar 
+##<img width="921" height="485" alt="image" src="https://github.com/user-attachments/assets/697a927c-6bf9-4721-a2ef-9818a4ad8c4a" />
 el entregara los resultados 
- 
-
-
-# PROYECTO CENTINELA
-# Autor: Hummberto Ramirez Pinzon
+## <img width="921" height="436" alt="image" src="https://github.com/user-attachments/assets/01623de7-c607-4544-9b55-da8c80ebb81e" />
 
 
 
-## 📌 Introducción
 
-Este documento describe la implementación del Proyecto Centinela con enfoque DevSecOps, integrando seguridad en cada fase del ciclo de vida mediante herramientas FOSS y despliegue contenerizado.
-En el panorama digital actual, la desinformación y la manipulación en redes sociales representan amenazas significativas. Este proyecto propone la creación de una plataforma funcional llamada **Proyecto Centinela**, diseñada para:
-
-- Combatir noticias falsas mediante web scraping y contrastación de fuentes.
-- Evaluar el impacto de campañas de información/desinformación.
-- Gestionar la publicación de contenido verificado en múltiples plataformas.
-
-
-
----
-
-## ✅ Objetivos
-- Diseñar e implementar un pipeline CI/CD/CS que integre seguridad en cada fase.
-- Desarrollar la aplicación Centinela con scraping, análisis y publicación.
-- Contenerizar todos los componentes (Frontend, Backend, DB, Workers).
-- Integrar herramientas de seguridad en cada etapa (Shift-Left Security).
-- Desplegar en Kubernetes (k3s) con IaC.
-- Establecer monitoreo y seguridad en tiempo real.
 
 ---
 
