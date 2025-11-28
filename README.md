@@ -40,12 +40,11 @@ En pocas palabras:
 👉 La envía a Google Fact Check Tools
 👉 Devuelve verificaciones, veredictos y enlaces de fact-checking
 
+## ¿Qué es una API y cómo se conecta con un formulario?
 
-Manual: Cómo utilizar una API HIT HUM con un formulario
-¿Qué es una API y cómo se conecta con un formulario?
 Una API es un servicio que recibe datos (por ejemplo, desde un formulario) y devuelve una respuesta.
 El formulario sirve para capturar los datos del usuario, y luego con un backend se envían esos datos a la API mediante una petición HTTP 
-📘 MANUAL
+## 📘 MANUAL
 Clonar y ejecutar el repositorio
 1. Clonar el repositorio en su equipo.
 2. Crear un Dockerfile para poder consumir la API.
