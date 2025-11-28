@@ -1,3 +1,57 @@
+¿Qué hace este código?
+Implementa un servicio de verificación de información
+✔ Consulta Google Fact Check Tools
+✔ Extrae veredictos, verificadores y enlaces
+✔ Devuelve todo en un JSON limpio y estructurado
+Es un componente perfecto para tu proyecto Centinela, especialmente para automatizar la verificación de noticias o titulares sospechosos.
+
+Este código implementa un microservicio FastAPI llamado Centinela Verificador, cuyo propósito es consultar la API de Google Fact Check Tools para verificar frases, titulares o afirmaciones.
+En pocas palabras:
+👉 Recibe una frase
+👉 La envía a Google Fact Check Tools
+👉 Devuelve verificaciones, veredictos y enlaces de fact-checking
+
+
+Manual: Cómo utilizar una API HIT HUM con un formulario
+¿Qué es una API y cómo se conecta con un formulario?
+Una API es un servicio que recibe datos (por ejemplo, desde un formulario) y devuelve una respuesta.
+El formulario sirve para capturar los datos del usuario, y luego con un backend se envían esos datos a la API mediante una petición HTTP 
+📘 MANUAL
+Clonar y ejecutar el repositorio
+1. Clonar el repositorio en su equipo.
+2. Crear un Dockerfile para poder consumir la API.
+
+Construcción y ejecución con Docker
+Ejecute los siguientes comandos:
+cd ~/Centinela
+
+ 
+
+docker build -t centinela .
+docker run -d -p 8000:8000 centinela
+ 
+
+APARECERA UN MENSAJE COMO ESTA  
+Después de esto, acceda a la ruta: 
+ http://localhost:8000/docs
+Uso de la API
+
+En la interfaz, despliegue el icono como se muestra en la imagen y realice las consultas en el validador.
+Ingrese la consulta a validar en el campo correspondiente y haga clic en 'Ejecutar'. El sistema entregará los resultados.
+ 
+para realizar la verificación de be desplegar en el icono como se muestra en la imagen  
+aparece así 
+ 
+
+estando en esta ventana podrán realizar las consultas en el validador 
+activar como se muestra en la imagen 
+ 
+en el campo debe colocar la Consulta a validar 
+ 
+dar click en ejecutar  
+el entregara los resultados 
+ 
+
 
 # PROYECTO CENTINELA
 # Autor: Hummberto Ramirez Pinzon
