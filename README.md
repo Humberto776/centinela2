@@ -26,11 +26,12 @@ En el panorama digital actual, la desinformación y la manipulación en redes so
 
 ---
 ## ¿Qué hace este código?
+
 Implementa un servicio de verificación de información
 
-##✔ Consulta Google Fact Check Tools
-##✔ Extrae veredictos, verificadores y enlaces
-##✔ Devuelve todo en un JSON limpio y estructurado
+## ✔ Consulta Google Fact Check Tools
+## ✔ Extrae veredictos, verificadores y enlaces
+## ✔ Devuelve todo en un JSON limpio y estructurado
 
 Es un componente perfecto para tu proyecto Centinela, especialmente para automatizar la verificación de noticias o titulares sospechosos.
 
